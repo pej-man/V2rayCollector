@@ -125,10 +125,10 @@ func main() {
 				lines := strings.Split(message_text, "\n")
 				for a := 0; a < len(lines); a++ {
 					for proto, _ := range configs {
-						if strings.Contains(lines[a], proto) {
-							// lines[a] = strings.Replace(lines[a], "\n", "", -1)
-							// lines[a] = strings.Replace(lines[a], proto, "\n"+proto, -1)
-							configs["mixed"] += "\n" + lines[a] + "\n"
+						if strings.Contains(lines[a], proto) && proto!= "ss" {
+							 lines[a] = strings.Replace(lines[a], "\n", "", -1)
+							 lines[a] = strings.Replace(lines[a], proto, "\n"+proto, -1)
+							 configs["mixed"] += lines[a]
 						}
 					}
 				}
